@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://rishishpradhan16.github.io/Ajnabi-Chat",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
