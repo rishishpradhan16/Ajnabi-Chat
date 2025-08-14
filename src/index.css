@@ -2,51 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Horror streaming design system - Bhootvaani */
+/* अजनबी Chat Design System - Warm, welcoming colors with modern gradients */
 
 @layer base {
   :root {
-    --background: 0 0% 3%;
-    --background-secondary: 0 0% 6%;
-    --background-tertiary: 0 0% 9%;
-    --foreground: 0 0% 90%;
+    /* Warm gradient background */
+    --background: 25 15% 98%;
+    --foreground: 15 25% 15%;
 
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 90%;
+    /* Card system with warm tones */
+    --card: 0 0% 100%;
+    --card-foreground: 15 25% 15%;
 
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 90%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 15 25% 15%;
 
-    --primary: 0 78% 50%;
+    /* Warm orange primary */
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 0 78% 60%;
+    --primary-glow: 25 100% 65%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 80%;
+    /* Soft teal secondary */
+    --secondary: 180 45% 85%;
+    --secondary-foreground: 180 60% 25%;
+    --teal: 180 60% 45%;
+    --teal-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    /* Muted warm tones */
+    --muted: 25 20% 94%;
+    --muted-foreground: 15 15% 55%;
 
-    --accent: 0 78% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Warm accent */
+    --accent: 35 80% 88%;
+    --accent-foreground: 25 95% 35%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 12%;
-    --ring: 0 78% 50%;
+    /* Subtle borders */
+    --border: 25 25% 90%;
+    --input: 25 25% 92%;
+    --ring: 25 95% 53%;
 
-    --horror-red: 0 78% 50%;
-    --horror-red-dark: 0 78% 35%;
-    --horror-glow: 0 78% 60%;
-    --shadow-red: 0 78% 20%;
+    /* Gradients */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(25 30% 98%) 0%, hsl(25 20% 96%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(var(--teal)) 0%, hsl(180 50% 60%) 100%);
+    
+    /* Shadows */
+    --shadow-warm: 0 4px 20px -8px hsl(var(--primary) / 0.25);
+    --shadow-soft: 0 8px 30px -12px hsl(15 25% 50% / 0.15);
+    --shadow-glow: 0 0 40px hsl(var(--primary-glow) / 0.3);
 
-    --gradient-horror: linear-gradient(135deg, hsl(0 0% 3%), hsl(0 0% 8%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 6%), hsl(0 0% 4%));
-    --gradient-red: linear-gradient(135deg, hsl(0 78% 50%), hsl(0 78% 35%));
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -111,29 +122,5 @@
 
   body {
     @apply bg-background text-foreground;
-    background: var(--gradient-horror);
-    min-height: 100vh;
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-
-  .horror-glow {
-    box-shadow: 0 0 20px hsl(var(--horror-glow) / 0.3);
-  }
-
-  .horror-text-glow {
-    text-shadow: 0 0 10px hsl(var(--horror-glow) / 0.5);
-  }
-
-  .horror-card {
-    background: var(--gradient-card);
-    border: 1px solid hsl(var(--border));
-    backdrop-filter: blur(10px);
-  }
-
-  .waveform {
-    background: linear-gradient(90deg, 
-      hsl(var(--horror-red) / 0.8) 0%, 
-      hsl(var(--horror-red) / 0.6) 50%, 
-      hsl(var(--horror-red) / 0.3) 100%);
   }
 }
