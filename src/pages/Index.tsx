@@ -1,22 +1,36 @@
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
-import ContentGrid from "@/components/ContentGrid";
-import AudioPlayer from "@/components/AudioPlayer";
+import { useState } from "react";
+import { ChatLanding } from "@/components/ChatLanding";
+import { TextChat } from "@/components/TextChat";
+import { VideoChat } from "@/components/VideoChat";
+
+type ChatMode = "landing" | "text" | "video";
 
 const Index = () => {
+  const [mode, setMode] = useState<ChatMode>("landing");
+
+  const handleStartTextChat = () => {
+    setMode("text");
+  };
+
+  const handleStartVideoChat = () => {
+    setMode("video");
+  };
+
+  const handleBack = () => {
+    setMode("landing");
+  };
+
   return (
-    <div className="min-h-screen bg-background flex">
-      <Sidebar />
-      
-      <div className="flex-1 flex flex-col">
-        <Header />
-        <main className="flex-1">
-          <ContentGrid />
-        </main>
-      </div>
-      
-      <AudioPlayer title="Lift No. 4" />
-    </div>
+    <>
+      {mode === "landing" && (
+        <ChatLanding
+          onStartTextChat={handleStartTextChat}
+          onStartVideoChat={handleStartVideoChat}
+        />
+      )}
+      {mode === "text" && <TextChat onBack={handleBack} />}
+      {mode === "video" && <VideoChat onBack={handleBack} />}
+    </>
   );
 };
 
