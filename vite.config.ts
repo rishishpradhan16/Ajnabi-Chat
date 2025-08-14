@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Ajnabi-Chat/", // 👈 apne GitHub repo ka naam yaha likho
+  base: "/", // 👈 changed from "/Ajnabi-Chat/" to "/" for root deployment
   server: {
     host: "::",
     port: 8080,
